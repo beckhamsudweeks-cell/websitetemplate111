@@ -94,7 +94,7 @@
   <div class="wrap">
     <h2>Get a free quote</h2>
     <p class="lead">Tell me a little about your business and I'll get back to you within a day.</p>
-    <form class="contact-form" action="https://formsubmit.co/beckyrbx@gmail.com" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/beckhamsudweeks@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New quote request from your website">
       <input type="hidden" name="_template" value="table">
       <div class="row">
@@ -108,7 +108,7 @@
       <textarea name="message" placeholder="What are you looking for?" rows="4"></textarea>
       <button type="submit" class="btn">Send</button>
     </form>
-    <p class="or">Or email me directly at <a href="mailto:beckyrbx@gmail.com">beckyrbx@gmail.com</a></p>
+    <p class="or">Or email me directly at <a href="mailto:beckhamsudweeks@gmail.com">beckhamsudweeks@gmail.com</a></p>
   </div>
 </section>
 
@@ -118,6 +118,26 @@
     <p class="muted">Built and designed by me — this site is a sample of my work.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var targets = document.querySelectorAll('.section h2, .section .lead, .card, .about > div, .contact-form, .or');
+  targets.forEach(function(el){ el.classList.add('reveal'); });
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  targets.forEach(function(el, i){
+    el.style.transitionDelay = (Math.min(i % 3, 2) * 0.08) + 's';
+    io.observe(el);
+  });
+})();
+</script>
 
 </body>
 </html>
